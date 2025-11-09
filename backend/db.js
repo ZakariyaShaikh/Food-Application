@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const Model = async () => {
   let connect = await mongoose.connect("mongodb://localhost:27017/GoFoodMeern")
-  if (!connect) comsole.log("Connection faild..")
+  if (!connect) console.log("Connection faild..")
   console.log("MongoDB is connected")
 
   const foodFetchData = await mongoose.connection.db.collection("Food_items");

@@ -23,11 +23,11 @@ Router.post('/loginuser',
             })
             console.log(userData)
             if (!userData) {
-                return res.status(400).json({ success: false, error: " Email is not valid" });
+                return res.status(400).json({ success: false, error: " Email or Password is not valid" });
             }
             const pwdCompare = await bcrypt.compare(req.body.password,userData.password)
             if (!pwdCompare) {
-                return res.status(400).json({ success: false, error: " Password is incorrect" });
+                return res.status(400).json({ success: false, error: " Email or Password is not valid" });
             }
 
             const data = {
